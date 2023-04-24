@@ -1,0 +1,30 @@
+Funcionalidade: Favoritar produto
+
+Eu como cliente americanas
+Desejo navegar na tela de produtos
+E favoritar os itens para visualiza-los posteriormente em meu perfil
+-------------------------------------------------------------------------------
+@positivo
+Cenário: Favoritar item - usuário deslogado
+
+Given que o usuário esteja deslogado na pagina do produto;
+When selecionar opção de favoritar;
+Then será direcionado a tela de login.
+---------------------------------------------------------------------------
+@positivo
+Cenário: Favoritar item - usuário logado
+
+Given que o usuário esteja logado em seu "perfil";
+And navegar para pagina do produto desejado;
+When selecionar a opção de favoritar item;
+Then item será adicionado aos favoritos;
+And será possível visualizar o produto na listagem de favoritos.
+----------------------------------------------------------------------------
+@positivo
+Cenário: Remover item de favoritos
+
+Given que o usuário esteja logado com seu "perfil";
+And esteja na pagina de um item favoritado anteriormente;
+When clicar na opção de favoritar;
+Then ira remover o item de favoritos.
+----------------------------------------------------------------------------
