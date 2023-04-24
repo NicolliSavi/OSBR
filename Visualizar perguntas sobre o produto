@@ -1,0 +1,22 @@
+Funcionalidade: visualizar comentários do produtos
+
+Eu como cliente das americanas
+Desejo acessar as perguntas de outros clientes sobre o produto
+e visualizar as perguntas e respostas de outros clientes relacionados ao produto.
+---------------------------------------------------------------------------------
+@positivo
+Cenário: visualizar perguntas sobre o produto
+
+Given que o usuário acesse a tela do produto;
+When selecionar a opção de perguntas;
+And ser direcionado para tela de perguntas;
+Then visualizo as perguntas e respostas dos usuários sobre o produto.
+---------------------------------------------------------------------------------
+@positivo
+Cenário: Enviar pergunta sobre o produto
+
+Given que o usuário acesse a tela de perguntas sobre o produto;
+When selecionar o botão escrever pergunta;
+Then usuário sera direcionado para tela de inserção da duvida;
+And sera possível realizar envio da pergunta.
+--------------------------------------------------------------------------------
