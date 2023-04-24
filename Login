@@ -1,0 +1,47 @@
+# language: pt
+
+Funcionalidade: Login
+Eu como cliente do site americanas,
+Desejo realizar login no site
+Para acessar as principais funcionalidades da pagina do produto escolhido.
+-------------------------------------------------------------------------------
+@positivo
+Cenário: Login no site 
+
+Given que o usuário navegue para opção "Faça seu Login";
+When clicar na opção entrar;
+Then é direcionado para tela de inserção dos seus dados.
+------------------------------------------------------------------------
+@positivo
+Cenário: Inserção de dados validos na tela de Login
+
+Given que o usuário navegue para tela de login;
+When inserir dados validos nos campos de <e-mail> e <Senha>;
+And clicar na opção continuar;
+Then será logado e direcionado novamente para tela de seu produto.
+
+E-mail         | Senha    |
+teste@teste.com| Teste@123|
+------------------------------------------------------------------------
+@negativo
+Cenário: Inserção de dados de e-mail inválidos na tela de Login.
+
+Given que o usuário navegue para tela de login;
+When inserir dados inválidos nos campos de <e-mail>;
+And clicar na opção de continuar;
+Then ira visualizar mensagem de e-mail incorreto.
+
+E-mail             |
+testefail@teste.com|
+-----------------------------------------------------------------------
+@negativo
+Cenário: Inserção de dados de senha inválidos na tela de login.
+
+Given que o usuário navegue para tela de login;
+When inserir dados inválidos no campo de <Senha>;
+And clicar na opção de continuar;
+Then ira visualizar mensagem de e-mail ou senha inválidos.
+
+ Senha       |
+testefail@123|
+------------------------------------------------------------------------
