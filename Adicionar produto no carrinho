@@ -1,0 +1,32 @@
+Funcionalidade: Fluxo de adicionar produto no carrinho
+
+Eu como cliente americanas
+desejo navegar pelas paginas de produtos
+E adicionar os produtos desejados ao meu carrinho
+-----------------------------------------------------------------------------
+@positivo
+Cenário: Adicionar produto ao carrinho - usuário deslogado.
+
+Given que o usuário esteja deslogado;
+And acesse a pagina do produto desejado;
+When clicar na opção comprar;
+And visualiza tela de garantia do produto;
+And seleciona opção continuar;
+Then visualiza tela da cesta contendo produto selecionado.
+---------------------------------------------------------------------------
+@positivo
+Cenário: Adicionar produto ao carrinho - Usuário logado
+
+Given que o usuário esteja logado;
+And acesse a pagina do produto desejado;
+When clicar na opção comprar;
+And visualiza tela de garantia do produto;
+And seleciona opção continuar;
+Then visualiza tela da cesta contendo produto selecionado.
+--------------------------------------------------------------------------
+@negativo
+Cenário: Produto não mais disponível em estoque
+
+Given que o usuário acesse a pagina do produto;
+When visualizar que o estoque do produto esta esgotado;
+Then não consegue realizar a inserção do produto em seu carrinho.
