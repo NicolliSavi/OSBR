@@ -1,0 +1,38 @@
+Funcionalidade: Recuperação de senha
+
+Eu como cliente americanas
+Desejo realizar a recuperação do meu Login
+Para ter acesso a área logada do site
+------------------------------------------------------------------------------
+@positivo
+Cenário: Recuperar senha
+
+Given que o usuário deseje realizar o processo de recuperação de senha;
+When na tela de login selecionar a opção de esqueceu?;
+And visualizar pop-up solicitando inserção do e-mail para recuperação;
+Then ira inserir e-mail valido no campo correspondente;
+And o e-mail será enviado ao destinatário.
+
+e-mail          |
+teste@teste.com |
+
+----------------------------------------------------------------------------
+@negativo
+Cenário: Recuperar senha - e-mail invalido
+
+Given que o usuário deseje realizar o processo de recuperação de senha;
+When na tela de login selecionar a opção de esqueceu?;
+And visualizar pop-up solicitando inserção do e-mail para recuperação;
+Then ira inserir e-mail inválido no campo correspondente;
+And o e-mail não será enviado ao destinatário.
+
+e-mail          |
+testefail@teste.com |
+----------------------------------------------------------------------------
+@positivo
+Cenário: Recuperar senha - Cancelar recuperação
+
+Given que usuário esta na tela de login;
+And selecione a opção de esqueceu?;
+When visualizar pop-up solicitando inserção de e-mail para recuperação da senha;
+Then ira selecionar o botão de cancelar.
